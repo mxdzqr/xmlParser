@@ -13,10 +13,7 @@ type Rates struct {
 	XMLName xml.Name `xml:"rates"`
 	Rates   []Item   `xml:"item"`
 }
-type RatesJson struct {
-	XMLName xml.Name `json:"rates"`
-	Rates   []Item   `json:"item"`
-}
+
 type Item struct {
 	XMLName xml.Name `xml:"item"`
 	From    string   `xml:"from"`
@@ -29,18 +26,7 @@ type Item struct {
 	Param string `xml:"param"`
 	City string `xml:"city"`
 }
-type ItemJson struct {
-	XMLName xml.Name `json:"item"`
-	From    string   `json:"from"`
-	To string `json:"to"`
-	In string `json:"in"`
-	Out string `json:"out"`
-	Amount string `json:"amount"`
-	Minamount string `json:"minamount"`
-	Maxamount string `json:"maxamount"`
-	Param string `json:"param"`
-	City string `json:"city"`
-}
+
 
 func StopServer(w http.ResponseWriter, r *http.Request) {
 	os.Exit(0)
