@@ -11,29 +11,11 @@ import (
 	"os"
 )
 
-
-//type Rates struct {
-//	XMLName xml.Name `xml:"rates"`
-//	Rates   []Item   `xml:"item"`
-//}
-//
-//type Item []struct {
-//	XMLName xml.Name `xml:"item"`
-//	From    string   `xml:"from"`
-//	To string `xml:"to"`
-//	In string `xml:"in"`
-//	Out string `xml:"out"`
-//	Amount string `xml:"amount"`
-//	Minamount string `xml:"minamount"`
-//	Maxamount string `xml:"maxamount"`
-//	Param string `xml:"param"`
-//	City string `xml:"city"`
-//}
-
 type Rates struct {
 	Items  []Item `xml:"item"`
 
 }
+
 type Item struct {
 	From      string   `xml:"from"`
 	To        string   `xml:"to"`
@@ -45,6 +27,7 @@ type Item struct {
 	Param     string   `xml:"param"`
 	City      string   `xml:"city"`
 }
+
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/stop", StopServer)
